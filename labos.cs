@@ -13,7 +13,7 @@ namespace labos
 
         static void Main(string[] args)
         {
-     
+           
             string fileName = "Datoteka.txt";
             string genome = string.Empty;
 
@@ -58,15 +58,16 @@ namespace labos
                 Console.WriteLine("File is empty!!");
                 return;
             }
-   
+           string genome1 = genome.Replace("\n","");
+           string genome3 = genome1.Replace("\r","");
+         string genome2=genome3.Replace(" ","");
         
-            
-            var pomak = genome.Length - l;
-            int pom = genome.Length;
+            var pomak = genome2.Length - l;
+            int pom = genome2.Length;
 
             for(int i = 0; i<pomak+1; ++i)
             {
-                var g = FindSmallest(genome.Substring(i, l), k);
+                var g = FindSmallest(genome2.Substring(i, l), k);
                 if (!vecBili.Contains(g))
                 {
                     Console.WriteLine(g + "\n");
@@ -74,7 +75,8 @@ namespace labos
                 }
                 
             }
-     
+
+          
         }
 
         static string FindSmallest(string s_in, int k)
@@ -113,6 +115,6 @@ namespace labos
            
         }
     }
-  }
+}
 }
 
