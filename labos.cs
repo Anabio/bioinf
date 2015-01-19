@@ -13,7 +13,7 @@ namespace labos
 
         static void Main(string[] args)
         {
-   
+        
             string fileName = "Datoteka.txt";
             string genome = string.Empty;
 
@@ -57,8 +57,22 @@ namespace labos
                 Console.WriteLine("File is empty!!");
                 return;
             }
-   
     
+        static string FindSmallest(string s_in, int k)
+        {
+            if (s_in.Length < k) return "error";
+
+            int index = 0;
+
+            string smallest = s_in.Substring(index, k);
+
+            for (int i = 1; i < (s_in.Length + 1 - k); ++i)
+            {
+                smallest = SmallestBetween2(smallest, s_in.Substring(i, k));
+            }
+           
+            return smallest;
+        }
 
         static string SmallestBetween2(string first, string second)
         {
@@ -80,5 +94,6 @@ namespace labos
            
         }
     }
+  }
 }
-}
+
