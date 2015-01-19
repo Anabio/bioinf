@@ -13,7 +13,8 @@ namespace labos
 
         static void Main(string[] args)
         {
-         
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
             string fileName = "Datoteka.txt";
             string genome = string.Empty;
 
@@ -77,7 +78,7 @@ namespace labos
                 }
                 
             }
-   
+        
             
             Console.WriteLine("________________"+ "\n");
                 for (int p=k; p < l; ++p)
@@ -91,7 +92,7 @@ namespace labos
 
             }
 
-
+          
             Console.WriteLine("________________" + "\n");
             for (int p = pom+1-k; p > (pom+1-l) ; --p)
             {
@@ -104,6 +105,9 @@ namespace labos
                 }
 
             }
+            stopWatch.Stop();
+            var vrijeme = stopWatch.Elapsed;
+            Console.WriteLine(vrijeme + "vrijeme");
 
            
         }
@@ -145,5 +149,5 @@ namespace labos
         }
     }
 }
-}
+
 
