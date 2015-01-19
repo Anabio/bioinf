@@ -14,7 +14,7 @@ namespace labos
         static void Main(string[] args)
         {
             var stopWatch = new Stopwatch();
-            stopWatch.Start();
+            stopWatch.Start();	//pocetak mjerenja vremena
             string fileName = "Datoteka.txt";
             string genome = string.Empty;
 
@@ -44,7 +44,7 @@ namespace labos
                  return;
              }
 
-             l = w + k - 1;
+             l = w + k - 1;    //duljina prozora je jednaka zbroju sirine prozora i duljine minimazera -1
 
             if(!File.Exists(fileName))
             {
@@ -60,14 +60,15 @@ namespace labos
                 Console.WriteLine("File is empty!!");
                 return;
             }
-           string genome1 = genome.Replace("\n","");
+           string genome1 = genome.Replace("\n","");    //micemo razmake, tabove i novi red
            string genome3 = genome1.Replace("\r","");
          string genome2=genome3.Replace(" ","");
+        
         
             var pomak = genome2.Length - l;
             int pom = genome2.Length;
 
-            for(int i = 0; i<pomak+1; ++i)
+            for(int i = 0; i<pomak+1; ++i)                   //trazimo interne minimazere
             {
                 var g = FindSmallest(genome2.Substring(i, l), k);
                 if (!vecBili.Contains(g))
@@ -77,9 +78,9 @@ namespace labos
                 }
                 
             }
-          
+       
             
-            Console.WriteLine("________________"+ "\n");
+            Console.WriteLine("________________"+ "\n");        //trazimo desne rubne minimazere
                 for (int p=k; p < l; ++p)
             {
                 var h = FindSmallest(genome2.Substring(0, p), k);
@@ -92,7 +93,7 @@ namespace labos
             }
 
          
-            Console.WriteLine("________________" + "\n");
+            Console.WriteLine("________________" + "\n");      //trazimo lijeve rubne minimazere
             for (int p = pom+1-k; p > (pom+1-l) ; --p)
             {
                 int wsize = pom + 1 - p;
@@ -104,10 +105,10 @@ namespace labos
                 }
 
             }
-            stopWatch.Stop();
+            stopWatch.Stop();                              //prestajemo mjeriti vrijeme, ispisujemo vrijeme i memoriju
             var vrijeme = stopWatch.Elapsed;
-            long memorija = GC.GetTotalMemory(false);
-            Console.WriteLine(memorija + " memorija");
+            long after = GC.GetTotalMemory(false);
+            Console.WriteLine(after + " memorija");
             Console.WriteLine(vrijeme + "vrijeme");
 
            
