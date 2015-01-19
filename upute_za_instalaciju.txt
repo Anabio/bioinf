@@ -1,0 +1,9 @@
+Program je radjen u C#-u, a pokrecemo ga sa Bio_linux platforme. U nastavku bit ce navedeno kako istalirati sve potrebno za pokretanje programa.
+1. Istalirati VirtualBox
+2. Downloadati Bio_linux te ga dodati na VirtualBox
+3. Pokrenuti Bio_linux 8
+4. Instalirati MonoDevelop
+5. U terminalu napraviti git clone sa repozitorija
+6. Pozicionirati se folder u kojem se nalazi program
+7. U terminal upisati gmsc labos.cs
+8. U terminal upisati mono labos.exe w k  //w oznacava sirinu prozora, a k duljinu k-mera
