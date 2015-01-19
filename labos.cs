@@ -64,7 +64,6 @@ namespace labos
            string genome3 = genome1.Replace("\r","");
          string genome2=genome3.Replace(" ","");
         
-            //Console.Write(genome2);
             var pomak = genome2.Length - l;
             int pom = genome2.Length;
 
@@ -78,7 +77,7 @@ namespace labos
                 }
                 
             }
-        
+          
             
             Console.WriteLine("________________"+ "\n");
                 for (int p=k; p < l; ++p)
@@ -92,7 +91,7 @@ namespace labos
 
             }
 
-          
+         
             Console.WriteLine("________________" + "\n");
             for (int p = pom+1-k; p > (pom+1-l) ; --p)
             {
@@ -107,6 +106,8 @@ namespace labos
             }
             stopWatch.Stop();
             var vrijeme = stopWatch.Elapsed;
+            long memorija = GC.GetTotalMemory(false);
+            Console.WriteLine(memorija + " memorija");
             Console.WriteLine(vrijeme + "vrijeme");
 
            
@@ -149,5 +150,3 @@ namespace labos
         }
     }
 }
-
-
