@@ -13,7 +13,7 @@ namespace labos
 
         static void Main(string[] args)
         {
-        
+         
             string fileName = "Datoteka.txt";
             string genome = string.Empty;
 
@@ -23,7 +23,7 @@ namespace labos
         
             List<string> vecBili = new List<string>();
             List<string> vecBili2 = new List<string>();
-        
+            List<string> vecBili3 = new List<string>();
 
             if(args.Length != 2)
             {
@@ -77,7 +77,8 @@ namespace labos
                 }
                 
             }
-              
+   
+            
             Console.WriteLine("________________"+ "\n");
                 for (int p=k; p < l; ++p)
             {
@@ -86,6 +87,20 @@ namespace labos
                 {
                     Console.WriteLine(h + "\n");
                     vecBili2.Add(h);
+                }
+
+            }
+
+
+            Console.WriteLine("________________" + "\n");
+            for (int p = pom+1-k; p > (pom+1-l) ; --p)
+            {
+                int wsize = pom + 1 - p;
+                var u = FindSmallest(genome2.Substring(p-1, wsize), k);
+                if (!vecBili3.Contains(u))
+                {
+                    Console.WriteLine(u + "\n");
+                    vecBili3.Add(u);
                 }
 
             }
